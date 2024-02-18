@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+  }
+
+  img
+  {
+      display: inline-block;
+      width: 200px;
+  }
+
+  img:hover
+  {
+      width: 100%;
+  }
+  img.custom:hover,
+  img.custom:focus 
+  {
+      transition: .2s;
+      transform: scale(1.15);
+  }
+
+  html {
+    font-family: "Lucida Sans", sans-serif;
+    background-image: linear-gradient(to bottom right, #f37413, #0099cc);
+    background-repeat: repeat;
+    background-size: cover;
+  }
+
+  .item1 {
+    background-color: rgb(255, 141, 2);
+    color: #ffffff;
+    text-indent: 30px;
+  }
+  
+  .item2 ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .item2 li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color: #f38701;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  
+  .item2 li:hover {
+    background-color: #0099cc;
+  }
+
+  .item3{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: #ffffff
+  }
+
+  .item4{
+    background-color: #33b5e5;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+  .item5{
+    background-color: #0099cc;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+  }
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'footer footer footer footer footer footer';
+  gap: 10px;
+  padding: 10px;
+  align-items: middle;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+
+.grid-container > div {
+  padding: 25px 0;
+  font-size: 30px;
+}
+
+div.fontex{
+    font-size: 14px;
+  }
+
+/*For tablet*/
+@media only screen and (max-width: 768px) {
+    .item1 { grid-area: 1 / 1 / 2 / span 3; }
+    .item2 { grid-area: 2 / 1 / 2 / span 3; }
+    .item3 { grid-area: 3 / 1 / 3 / span 3; }
+    .item4 { grid-area: 4 / 1 / 4 / span 3; }
+    .item5 { grid-area: 5 / 1 / 5 / span 3; }
+  }
+
+/*For mobile phone*/
+@media only screen and (max-width: 500px) {
+    .item1 { grid-area: 1 / 1 / 2 / span 3; }
+    .item2 { grid-area: 2 / 1 / 2 / span 3; }
+    .item3 { grid-area: 3 / 1 / 3 / span 3; }
+    .item4 { grid-area: 4 / 1 / 4 / span 3; }
+    .item5 { grid-area: 5 / 1 / 5 / span 3; }
+  }
